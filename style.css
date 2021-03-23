@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+body {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    margin: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+#slider {
+    position: static;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+#main-wrap {
+    transition: 2s;
+    transition-timing-function: cubic-bezier(.32,.74,.39,.77);
+}
+.media-wrap {
+    position: absolute;
+    text-decoration: none;
+    color: #000000;
+    z-index: 0;
+    transform-origin: center;
+    transform: scale(0.8);
+    opacity: .8;
+    overflow: hidden;
+}
+.media {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.media-wrap:hover {
+    z-index: 600;
+    transform: scale(1);
+    opacity: 1;
+}
+.media-wrap:hover .square {
+    transform: scale(1);
+}
+.media-wrap:hover .pop-up-text {
+    max-width: 200px;
+}
+.media-wrap:hover .pop-up-title-text {
+    opacity: 1;
+}
+.pop-up-text {
+    position: absolute;
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    padding-left: 60px;
+    padding-top: calc(100% - 50px);
+    transform-origin: top left;
+    transform: rotate(270deg);
+    overflow: hidden;
+    white-space: nowrap;
+
+    max-width: 0;
+    transition: max-width .4s ease-in-out;
+}
+.square {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    margin-left: calc(100% - 40px);
+    margin-top: -26px;
+    transition: transform .4s;
+    transform: scale(0);
+}
+.pop-up-title-text {
+    position: absolute;
+    display: block;
+    width: 70%;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    transform-origin: bottom center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+}
+.transition {
+    transition: transform .4s, opacity .4s;
+    /*, left .4s ease-in;*/
+}
